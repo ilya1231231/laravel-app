@@ -37,7 +37,7 @@ class MailSettingController extends Controller{
         }
 
       $Review->save();
-      return $this->takeParamsForMail($name, $email, $topic, $msg);
+      return $this->takeParamsForMail($name, $email, $topic, $msg) ;
       }
 
       //Функция ответа на отзыв

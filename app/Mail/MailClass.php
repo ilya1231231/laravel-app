@@ -1,7 +1,6 @@
 <?php
-
+declare(strict_types=1);
 namespace App\Mail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,16 +10,16 @@ class MailClass extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $name;
-    protected $email;
-    protected $topic;
-    protected $msg;
+    protected string $name;
+    protected string $email;
+    protected string $topic;
+    protected string $msg;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name, $email, $topic, $msg)
+    public function __construct(string $name, string $email, string $topic, string $msg)
     {
         $this->name = $name;
         $this->email = $email;

@@ -11,14 +11,14 @@ class MailToPeopleClass extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $text;
+    protected string $text;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($text )
+    public function __construct(string $text )
     {
         $this->text = $text;
     }
@@ -32,7 +32,7 @@ class MailToPeopleClass extends Mailable
     {
         return $this->view('mail-to-people')
         ->with([
-          'text'=>$this->text,
+              'text'=>$this->text,
 
             ]);
 

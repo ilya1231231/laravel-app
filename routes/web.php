@@ -14,7 +14,7 @@ Route::get('/reviews', "MainController@showAllReviews")->name('reviews');  //Т�
 //Обрабатываются данные из формы и функция отправки отзыва от человека к админу
 Route::post('send-mail', 'MailSettingController@sendRiview');
 
-Route::post('/reviews/{statusId}/send-answer', "MainController@sendReplyToRiview")->name('status.reply');
+Route::post('/reviews/{statusId}/send-answer', "MailSettingController@sendReplyToRiview")->name('status.reply');
 
 
 

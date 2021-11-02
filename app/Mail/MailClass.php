@@ -34,7 +34,7 @@ class MailClass extends Mailable
      */
     public function build()
     {
-        return $this->view('mail')
+        return $this->view('mail.mail')
             ->with([
               'name'=>$this->name,
               'email'=>$this->email,

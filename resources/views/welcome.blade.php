@@ -13,5 +13,4 @@
         <textarea name="msg" id="msg" placeholder="Опишите проблему" class="form-control"></textarea><br>
         <button type="submit" class="btn btn-success">Отправить</button>
     </form>
-</div>
 @endsection

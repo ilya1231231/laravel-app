@@ -1,4 +1,3 @@
-
 @extends('base')
 @section('title')
   Все отзывы
@@ -12,7 +11,7 @@
         <p>Тема: {{ $el->topic }}</p>
         <p>Имя: {{ $el->name }}</p>
         <p>Сообщение: {{ $el->message }}</p>
-          @if ($el->gimmeAnswer)
+          @if ($el->giveMeAnswer)
               <h3>Вы ответили на это сообщение</h3>
           @else
               <form method="post" action="{{ route('status.reply',  ['statusId' => $el->id])}}">

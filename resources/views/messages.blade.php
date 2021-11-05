@@ -8,11 +8,6 @@
     </div>
 @endif
 
-@if(session('timeerror'))
-    <div class="alert alert-danger">
-        {{ session('timeerror') }}
-    </div>
-@endif
 
 
 @if(session('success'))

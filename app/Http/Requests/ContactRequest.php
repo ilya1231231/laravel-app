@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\TimeSendFromEmail;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ContactRequest extends FormRequest
@@ -24,10 +25,10 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|max:100',
-            'msg' =>'required|min:10',
+            'email' => ['required', 'max:100', new TimeSendFromEmail],
+            'msg' =>['required', 'min:10'],
             'name' =>'required',
-            'topic' =>'required',
+            'topic' =>['required', 'max:100']
         ];
     }
 }

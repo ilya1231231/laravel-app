@@ -21,7 +21,7 @@ class MailSettingController extends Controller
     public function sendReplyToRiview(Request $request, int $statusId)
     {
         $request->validate([
-          "text-$statusId" => 'required|max:1024',
+            "text-$statusId" => 'required|max:1024',
         ]);
         $Answer = new Answer();
         return $Answer->takeAnswerData($request, $statusId);

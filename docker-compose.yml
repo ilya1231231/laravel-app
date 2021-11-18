@@ -12,7 +12,8 @@ services:
             - fpm
         depends_on:
             - fpm
-            - mysql
+            - db
+            - nodejs
         volumes:
             - ./:/var/www/laravel-docker
     nodejs:
@@ -22,7 +23,7 @@ services:
         volumes:
             - ./:/var/www/laravel-docker
         command: bash -c "npm install && npm run dev"
-        links:
+        depends_on:
             - fpm
     fpm:
         container_name: php-fpm
@@ -32,10 +33,9 @@ services:
         volumes:
             - ./:/var/www/laravel-docker
         links:
-            - mysql
-    mysql:
+            - db
+    db:
         image: mysql
-        container_name: database
         ports:
             - 33061:3306
         environment:
